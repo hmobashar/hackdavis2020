@@ -1,0 +1,6 @@
+framework module Pods_Tend {
+  umbrella header "Pods-Tend-umbrella.h"
+
+  export *
+  module * { export * }
+}

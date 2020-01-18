@@ -3,19 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02F5306C23D3B9B5009D05D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02F5306B23D3B9B5009D05D5 /* GoogleService-Info.plist */; };
 		77C7D5C423D393500075CAD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7D5C323D393500075CAD7 /* AppDelegate.swift */; };
 		77C7D5C623D393500075CAD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7D5C523D393500075CAD7 /* SceneDelegate.swift */; };
 		77C7D5C823D393500075CAD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7D5C723D393500075CAD7 /* ViewController.swift */; };
 		77C7D5CB23D393500075CAD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77C7D5C923D393500075CAD7 /* Main.storyboard */; };
 		77C7D5CD23D393510075CAD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77C7D5CC23D393510075CAD7 /* Assets.xcassets */; };
 		77C7D5D023D393510075CAD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77C7D5CE23D393510075CAD7 /* LaunchScreen.storyboard */; };
+		79310DA88DBEF19FC0CEB2C3 /* Pods_Tend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CC2210514B8DA4D8960F7F /* Pods_Tend.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02F5306B23D3B9B5009D05D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		56A38FB4A71037C36EDA58A0 /* Pods-Tend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tend.release.xcconfig"; path = "Target Support Files/Pods-Tend/Pods-Tend.release.xcconfig"; sourceTree = "<group>"; };
 		77C7D5C023D393500075CAD7 /* Tend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77C7D5C323D393500075CAD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77C7D5C523D393500075CAD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		77C7D5CC23D393510075CAD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77C7D5CF23D393510075CAD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77C7D5D123D393510075CAD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD599B8D05EAA20E14C52191 /* Pods-Tend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tend.debug.xcconfig"; path = "Target Support Files/Pods-Tend/Pods-Tend.debug.xcconfig"; sourceTree = "<group>"; };
+		E4CC2210514B8DA4D8960F7F /* Pods_Tend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79310DA88DBEF19FC0CEB2C3 /* Pods_Tend.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		069B3E8001537140F897BA0C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD599B8D05EAA20E14C52191 /* Pods-Tend.debug.xcconfig */,
+				56A38FB4A71037C36EDA58A0 /* Pods-Tend.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		77C7D5B723D393500075CAD7 = {
 			isa = PBXGroup;
 			children = (
 				77C7D5C223D393500075CAD7 /* Tend */,
 				77C7D5C123D393500075CAD7 /* Products */,
+				069B3E8001537140F897BA0C /* Pods */,
+				A1D84A640B2A247F79865CE9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +75,7 @@
 		77C7D5C223D393500075CAD7 /* Tend */ = {
 			isa = PBXGroup;
 			children = (
+				02F5306B23D3B9B5009D05D5 /* GoogleService-Info.plist */,
 				77C7D5C323D393500075CAD7 /* AppDelegate.swift */,
 				77C7D5C523D393500075CAD7 /* SceneDelegate.swift */,
 				77C7D5C723D393500075CAD7 /* ViewController.swift */,
@@ -67,6 +87,14 @@
 			path = Tend;
 			sourceTree = "<group>";
 		};
+		A1D84A640B2A247F79865CE9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4CC2210514B8DA4D8960F7F /* Pods_Tend.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +102,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 77C7D5D423D393510075CAD7 /* Build configuration list for PBXNativeTarget "Tend" */;
 			buildPhases = (
+				D6DF3B19CACBD49A7E67D84E /* [CP] Check Pods Manifest.lock */,
 				77C7D5BC23D393500075CAD7 /* Sources */,
 				77C7D5BD23D393500075CAD7 /* Frameworks */,
 				77C7D5BE23D393500075CAD7 /* Resources */,
+				A064270120F2DE7F4B12C31F /* [CP] Embed Pods Frameworks */,
+				23712C418B902C76D419CD69 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -103,7 +134,7 @@
 				};
 			};
 			buildConfigurationList = 77C7D5BB23D393500075CAD7 /* Build configuration list for PBXProject "Tend" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -126,12 +157,72 @@
 			buildActionMask = 2147483647;
 			files = (
 				77C7D5D023D393510075CAD7 /* LaunchScreen.storyboard in Resources */,
+				02F5306C23D3B9B5009D05D5 /* GoogleService-Info.plist in Resources */,
 				77C7D5CD23D393510075CAD7 /* Assets.xcassets in Resources */,
 				77C7D5CB23D393500075CAD7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23712C418B902C76D419CD69 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tend/Pods-Tend-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tend/Pods-Tend-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tend/Pods-Tend-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A064270120F2DE7F4B12C31F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tend/Pods-Tend-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tend/Pods-Tend-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tend/Pods-Tend-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6DF3B19CACBD49A7E67D84E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tend-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		77C7D5BC23D393500075CAD7 /* Sources */ = {
@@ -216,7 +307,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +361,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -282,6 +373,7 @@
 		};
 		77C7D5D523D393510075CAD7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD599B8D05EAA20E14C52191 /* Pods-Tend.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +392,7 @@
 		};
 		77C7D5D623D393510075CAD7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56A38FB4A71037C36EDA58A0 /* Pods-Tend.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
