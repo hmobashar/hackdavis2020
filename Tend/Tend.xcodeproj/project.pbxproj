@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		02F5306C23D3B9B5009D05D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02F5306B23D3B9B5009D05D5 /* GoogleService-Info.plist */; };
+		02F5307523D3CDB6009D05D5 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5307323D3CDB6009D05D5 /* Medication.swift */; };
+		02F5307623D3CDB6009D05D5 /* Symptoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5307423D3CDB6009D05D5 /* Symptoms.swift */; };
 		77C7D5C423D393500075CAD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7D5C323D393500075CAD7 /* AppDelegate.swift */; };
 		77C7D5C623D393500075CAD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7D5C523D393500075CAD7 /* SceneDelegate.swift */; };
 		77C7D5C823D393500075CAD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7D5C723D393500075CAD7 /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		02F5306B23D3B9B5009D05D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		02F5307323D3CDB6009D05D5 /* Medication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
+		02F5307423D3CDB6009D05D5 /* Symptoms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symptoms.swift; sourceTree = "<group>"; };
 		56A38FB4A71037C36EDA58A0 /* Pods-Tend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tend.release.xcconfig"; path = "Target Support Files/Pods-Tend/Pods-Tend.release.xcconfig"; sourceTree = "<group>"; };
 		77C7D5C023D393500075CAD7 /* Tend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77C7D5C323D393500075CAD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,13 +48,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02F5307223D3CDB6009D05D5 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				02F5307323D3CDB6009D05D5 /* Medication.swift */,
+				02F5307423D3CDB6009D05D5 /* Symptoms.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		069B3E8001537140F897BA0C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				DD599B8D05EAA20E14C52191 /* Pods-Tend.debug.xcconfig */,
 				56A38FB4A71037C36EDA58A0 /* Pods-Tend.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -75,6 +87,7 @@
 		77C7D5C223D393500075CAD7 /* Tend */ = {
 			isa = PBXGroup;
 			children = (
+				02F5307223D3CDB6009D05D5 /* User */,
 				02F5306B23D3B9B5009D05D5 /* GoogleService-Info.plist */,
 				77C7D5C323D393500075CAD7 /* AppDelegate.swift */,
 				77C7D5C523D393500075CAD7 /* SceneDelegate.swift */,
@@ -229,6 +242,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02F5307623D3CDB6009D05D5 /* Symptoms.swift in Sources */,
+				02F5307523D3CDB6009D05D5 /* Medication.swift in Sources */,
 				77C7D5C823D393500075CAD7 /* ViewController.swift in Sources */,
 				77C7D5C423D393500075CAD7 /* AppDelegate.swift in Sources */,
 				77C7D5C623D393500075CAD7 /* SceneDelegate.swift in Sources */,
