@@ -65,8 +65,7 @@ class ViewController: UIViewController {
     @IBAction func behaviorLogButton(_ sender: Any) {
         loadingImage.loadGif(name: "sadGif")
     }
-
-
+    
     func updateChartData() {
         // let chartDataSet = PieChartDataSet(values: numberOfDownloadsDataEntries, label: nil)
         // let chartData = PieChartData(dataSet: chartDataSet)
