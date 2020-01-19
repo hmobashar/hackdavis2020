@@ -12,13 +12,20 @@ import Charts
 class HistoryStats: UIViewController {
 
     @IBOutlet weak var barView1: BarChartView!
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]
     let medications = [1.0, 2.0, 0.0, 3.0, 3.0, 2.0, 1.0]
     let symptoms = [1.0,2.0,2.0, 4.0, 4.0, 2.0, 1.0]
     
     weak var axisFormatDelegate: IAxisValueFormatter?
     let formato:BarChartFormatter = BarChartFormatter()
     
+    @IBOutlet weak var pieChart: PieChartView!
+
+    var iosDataEntry = PieChartDataEntry(value: 0)
+    var macDataEntry = PieChartDataEntry(value: 0)
+    
+    var numberOfDownloadsDataEntries = [PieChartDataEntry]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         /*
@@ -30,6 +37,7 @@ class HistoryStats: UIViewController {
         */
         //barView1.delegate = self
         barView1.noDataText = "You need to provide data for the chart."
+        barView1.backgroundColor = UIColor.white
         
         let legend = barView1.legend
         legend.enabled = true
@@ -61,6 +69,19 @@ class HistoryStats: UIViewController {
         
         setChart()
         // Do any additional setup after loading the view.
+        
+        pieChart.chartDescription?.text = ""
+        
+        iosDataEntry.value = iosDataEntry.value + 1
+        iosDataEntry.label = "iOS"
+        
+        macDataEntry.value = macDataEntry.value + 1
+        macDataEntry.label = "macOS"
+        
+        numberOfDownloadsDataEntries = [iosDataEntry, macDataEntry]
+        
+        updateChartData()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -108,8 +129,17 @@ class HistoryStats: UIViewController {
         
         barView1.data = chartData
         
-        barView1.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 1)
         barView1.animate(xAxisDuration: 1.5, yAxisDuration: 1.5, easingOption: .linear)
     }
 
+    func updateChartData() {
+        let chartDataSet = PieChartDataSet(entries: numberOfDownloadsDataEntries, label: nil)
+        let chartData = PieChartData(dataSet: chartDataSet)
+        
+        let colors = [UIColor(named:"iosColor"), UIColor(named:"macColor")]
+        chartDataSet.colors = colors as! [NSUIColor]
+        
+        pieChart.data = chartData
+    }
+    
 }
