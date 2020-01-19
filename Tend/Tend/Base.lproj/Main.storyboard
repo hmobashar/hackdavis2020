@@ -454,6 +454,7 @@
                                 </state>
                                 <connections>
                                     <action selector="viewStatistics:" destination="Lyg-Gl-rYT" eventType="touchUpInside" id="CKF-Pp-rtM"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="ysT-i3-hst"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calendar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-jw-kDZ">
@@ -1033,6 +1034,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="zUe-P6-1Ei"/>
         <segue reference="TjE-dA-a7K"/>
-        <segue reference="fBK-XL-ygQ"/>
+        <segue reference="ysT-i3-hst"/>
     </inferredMetricsTieBreakers>
 </document>

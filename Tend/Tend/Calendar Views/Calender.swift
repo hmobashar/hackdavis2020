@@ -63,6 +63,7 @@ class Calender: UIViewController {
     @IBAction func viewStatistics(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeVC = storyboard.instantiateViewController(withIdentifier: "home") as! ViewController
+        
         homeVC.modalPresentationStyle = .fullScreen
     }
     
