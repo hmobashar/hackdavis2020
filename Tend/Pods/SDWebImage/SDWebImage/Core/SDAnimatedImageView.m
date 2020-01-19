@@ -166,12 +166,13 @@
         };
         self.player.animationLoopHandler = ^(NSUInteger loopCount) {
             @strongify(self);
-            self.currentLoopCount = loopCount;
             // Progressive image reach the current last frame index. Keep the state and pause animating. Wait for later restart
             if (self.isProgressive) {
-                NSUInteger lastFrameIndex = self.player.totalFrameCount;
+                NSUInteger lastFrameIndex = self.player.totalFrameCount - 1;
                 [self.player seekToFrameAtIndex:lastFrameIndex loopCount:0];
                 [self.player pausePlaying];
+            } else {
+                self.currentLoopCount = loopCount;
             }
         };
         
@@ -305,6 +306,19 @@
 
 #pragma mark - UIImageView Method Overrides
 #pragma mark Image Data
+
+- (void)setAnimationRepeatCount:(NSInteger)animationRepeatCount
+{
+#if SD_UIKIT
+    [super setAnimationRepeatCount:animationRepeatCount];
+#else
+    _animationRepeatCount = animationRepeatCount;
+#endif
+    
+    if (self.shouldCustomLoopCount) {
+        self.player.totalLoopCount = animationRepeatCount;
+    }
+}
 
 - (void)startAnimating
 {

@@ -10,6 +10,10 @@
 		02F5306C23D3B9B5009D05D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02F5306B23D3B9B5009D05D5 /* GoogleService-Info.plist */; };
 		02F5307523D3CDB6009D05D5 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5307323D3CDB6009D05D5 /* Medication.swift */; };
 		02F5307623D3CDB6009D05D5 /* Symptoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5307423D3CDB6009D05D5 /* Symptoms.swift */; };
+		770EB7A123D3E338000A082F /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EB7A023D3E338000A082F /* Calendar.swift */; };
+		770EB7A323D3E365000A082F /* HistoryStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EB7A223D3E365000A082F /* HistoryStats.swift */; };
+		770EB7A523D3E393000A082F /* MedicationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EB7A423D3E393000A082F /* MedicationsVC.swift */; };
+		770EB7A723D3E3A1000A082F /* SymptomsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EB7A623D3E3A1000A082F /* SymptomsVC.swift */; };
 		77C7D5C423D393500075CAD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7D5C323D393500075CAD7 /* AppDelegate.swift */; };
 		77C7D5C623D393500075CAD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7D5C523D393500075CAD7 /* SceneDelegate.swift */; };
 		77C7D5C823D393500075CAD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7D5C723D393500075CAD7 /* ViewController.swift */; };
@@ -24,6 +28,10 @@
 		02F5307323D3CDB6009D05D5 /* Medication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
 		02F5307423D3CDB6009D05D5 /* Symptoms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symptoms.swift; sourceTree = "<group>"; };
 		56A38FB4A71037C36EDA58A0 /* Pods-Tend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tend.release.xcconfig"; path = "Target Support Files/Pods-Tend/Pods-Tend.release.xcconfig"; sourceTree = "<group>"; };
+		770EB7A023D3E338000A082F /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		770EB7A223D3E365000A082F /* HistoryStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStats.swift; sourceTree = "<group>"; };
+		770EB7A423D3E393000A082F /* MedicationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationsVC.swift; sourceTree = "<group>"; };
+		770EB7A623D3E3A1000A082F /* SymptomsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsVC.swift; sourceTree = "<group>"; };
 		77C7D5C023D393500075CAD7 /* Tend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77C7D5C323D393500075CAD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77C7D5C523D393500075CAD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +101,10 @@
 				77C7D5C523D393500075CAD7 /* SceneDelegate.swift */,
 				77C7D5C723D393500075CAD7 /* ViewController.swift */,
 				77C7D5C923D393500075CAD7 /* Main.storyboard */,
+				770EB7A423D3E393000A082F /* MedicationsVC.swift */,
+				770EB7A623D3E3A1000A082F /* SymptomsVC.swift */,
+				770EB7A223D3E365000A082F /* HistoryStats.swift */,
+				770EB7A023D3E338000A082F /* Calendar.swift */,
 				77C7D5CC23D393510075CAD7 /* Assets.xcassets */,
 				77C7D5CE23D393510075CAD7 /* LaunchScreen.storyboard */,
 				77C7D5D123D393510075CAD7 /* Info.plist */,
@@ -243,9 +255,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				02F5307623D3CDB6009D05D5 /* Symptoms.swift in Sources */,
+				770EB7A123D3E338000A082F /* Calendar.swift in Sources */,
 				02F5307523D3CDB6009D05D5 /* Medication.swift in Sources */,
 				77C7D5C823D393500075CAD7 /* ViewController.swift in Sources */,
+				770EB7A523D3E393000A082F /* MedicationsVC.swift in Sources */,
 				77C7D5C423D393500075CAD7 /* AppDelegate.swift in Sources */,
+				770EB7A723D3E3A1000A082F /* SymptomsVC.swift in Sources */,
+				770EB7A323D3E365000A082F /* HistoryStats.swift in Sources */,
 				77C7D5C623D393500075CAD7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

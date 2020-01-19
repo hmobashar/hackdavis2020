@@ -10,5 +10,6 @@ target 'Tend' do
   pod 'Firebase/Analytics'
   pod 'FirebaseUI'
   pod 'Firebase/Storage'
+  pod 'Charts'
 
 end
