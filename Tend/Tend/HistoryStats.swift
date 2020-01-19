@@ -12,34 +12,50 @@ import Charts
 class HistoryStats: UIViewController {
 
     @IBOutlet weak var barView: BarChartView!
-    var data = ["morning", "afternoon", "evening"]
-    var vals = [0.0,2.0,1.0]
+    var datas = ["Morning", "Afternoon", "Evening"]
+    var vals = [0.5,2.0,1.0]
+    weak var axisFormatDelegate: IAxisValueFormatter?
+    let formato:BarChartFormatter = BarChartFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setChart(dataPoints: data, values: vals)
-
+        setChart(dataPoints: datas, values: vals)
+        barView.xAxis.drawAxisLineEnabled = false
+        barView.xAxis.drawGridLinesEnabled = false
+        barView.xAxis.labelCount = 3
+        barView.legend.enabled = false
+        barView.fitBars = true
         // Do any additional setup after loading the view.
     }
     
-    func setChart(dataPoints: [String], values: [Double]) {
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
-        barView.noDataText = "You need to provide data for the chart."
+     func setChart(dataPoints: [String], values: [Double]){
+        
+        formato.setValues(values: dataPoints)
+        let xaxis:XAxis = XAxis()
+
+        let _ : XAxis = self.barView.xAxis;
+        barView.noDataText = "you need to provide some data for the chart."
 
         var dataEntries: [BarChartDataEntry] = Array()
-        var counter = 0.0
 
-        for i in 0..<dataPoints.count {
-            counter += 1.0
-            let dataEntry = BarChartDataEntry(x: values[i], y: counter)
+        for i in 0..<dataPoints.count
+        {
+            let dataEntry = BarChartDataEntry(x: Double(i), y: values[i])
             dataEntries.append(dataEntry)
         }
 
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Time")
-        let chartData = BarChartData()
-        chartData.addDataSet(chartDataSet)
-        barView.data = chartData
+        xaxis.valueFormatter = formato
+        barView.xAxis.valueFormatter = xaxis.valueFormatter
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Games Played")
+        let chartData = BarChartData(dataSets: [chartDataSet])
+        chartDataSet.colors = ChartColorTemplates.material()
 
+        barView.data = chartData
     }
 
 }

@@ -10,6 +10,8 @@
 		02F5306C23D3B9B5009D05D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02F5306B23D3B9B5009D05D5 /* GoogleService-Info.plist */; };
 		02F5307523D3CDB6009D05D5 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5307323D3CDB6009D05D5 /* Medication.swift */; };
 		02F5307623D3CDB6009D05D5 /* Symptoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5307423D3CDB6009D05D5 /* Symptoms.swift */; };
+		02F5307823D3D303009D05D5 /* Firebase_Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5307723D3D303009D05D5 /* Firebase_Commands.swift */; };
+		02F5307A23D404BB009D05D5 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5307923D404BB009D05D5 /* Meal.swift */; };
 		770EB7A123D3E338000A082F /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EB7A023D3E338000A082F /* Calendar.swift */; };
 		770EB7A323D3E365000A082F /* HistoryStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EB7A223D3E365000A082F /* HistoryStats.swift */; };
 		770EB7A523D3E393000A082F /* MedicationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EB7A423D3E393000A082F /* MedicationsVC.swift */; };
@@ -17,8 +19,7 @@
 		7770059123D423B700136AA3 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7770059023D423B600136AA3 /* UIImage+Gif.swift */; };
 		7770059323D4247500136AA3 /* sadGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7770059223D4247500136AA3 /* sadGif.gif */; };
 		7770059523D4247D00136AA3 /* happyGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7770059423D4247D00136AA3 /* happyGif.gif */; };
-		02F5307823D3D303009D05D5 /* Firebase_Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5307723D3D303009D05D5 /* Firebase_Commands.swift */; };
-		02F5307A23D404BB009D05D5 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5307923D404BB009D05D5 /* Meal.swift */; };
+		77BF139723D460290076C9FC /* BarChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BF139623D460290076C9FC /* BarChartFormatter.swift */; };
 		77C7D5C423D393500075CAD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7D5C323D393500075CAD7 /* AppDelegate.swift */; };
 		77C7D5C623D393500075CAD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7D5C523D393500075CAD7 /* SceneDelegate.swift */; };
 		77C7D5C823D393500075CAD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7D5C723D393500075CAD7 /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 		7770059023D423B600136AA3 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 		7770059223D4247500136AA3 /* sadGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sadGif.gif; sourceTree = "<group>"; };
 		7770059423D4247D00136AA3 /* happyGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = happyGif.gif; sourceTree = "<group>"; };
+		77BF139623D460290076C9FC /* BarChartFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartFormatter.swift; sourceTree = "<group>"; };
 		77C7D5C023D393500075CAD7 /* Tend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77C7D5C323D393500075CAD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77C7D5C523D393500075CAD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				770EB7A623D3E3A1000A082F /* SymptomsVC.swift */,
 				770EB7A223D3E365000A082F /* HistoryStats.swift */,
 				770EB7A023D3E338000A082F /* Calendar.swift */,
+				77BF139623D460290076C9FC /* BarChartFormatter.swift */,
 				7770059023D423B600136AA3 /* UIImage+Gif.swift */,
 				77C7D5CC23D393510075CAD7 /* Assets.xcassets */,
 				77C7D5CE23D393510075CAD7 /* LaunchScreen.storyboard */,
@@ -275,6 +278,7 @@
 				02F5307623D3CDB6009D05D5 /* Symptoms.swift in Sources */,
 				770EB7A123D3E338000A082F /* Calendar.swift in Sources */,
 				02F5307A23D404BB009D05D5 /* Meal.swift in Sources */,
+				77BF139723D460290076C9FC /* BarChartFormatter.swift in Sources */,
 				02F5307523D3CDB6009D05D5 /* Medication.swift in Sources */,
 				77C7D5C823D393500075CAD7 /* ViewController.swift in Sources */,
 				770EB7A523D3E393000A082F /* MedicationsVC.swift in Sources */,
