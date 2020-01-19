@@ -381,8 +381,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A95-VE-06m">
-                                <rect key="frame" x="-20" y="120" width="414" height="642"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A95-VE-06m">
+                                <rect key="frame" x="16" y="120" width="343" height="642"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ohu-uA-Afw">
                                     <size key="itemSize" width="378" height="214"/>
@@ -392,7 +392,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Symptom" id="Fjd-am-Yof" userLabel="Symptom" customClass="SymptomCell" customModule="Tend" customModuleProvider="target">
-                                        <rect key="frame" x="76" y="0.0" width="262" height="230"/>
+                                        <rect key="frame" x="40.666666666666664" y="0.0" width="262" height="230"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bfF-VC-woY">
                                             <rect key="frame" x="0.0" y="0.0" width="262" height="230"/>
@@ -440,13 +440,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="A95-VE-06m" firstAttribute="top" secondItem="ZyK-zU-FPt" secondAttribute="bottom" constant="9" id="11f-BS-kqk"/>
                             <constraint firstItem="ZyK-zU-FPt" firstAttribute="top" secondItem="gow-GN-A5B" secondAttribute="top" constant="29" id="5nE-kc-m1q"/>
                             <constraint firstItem="ZyK-zU-FPt" firstAttribute="centerX" secondItem="UZ6-I9-T92" secondAttribute="centerX" id="BBi-Yu-ZdX"/>
-                            <constraint firstItem="A95-VE-06m" firstAttribute="centerX" secondItem="ZyK-zU-FPt" secondAttribute="centerX" id="TTY-te-2O8"/>
-                            <constraint firstItem="A95-VE-06m" firstAttribute="top" secondItem="ZyK-zU-FPt" secondAttribute="bottom" constant="9" id="bjP-SW-36K"/>
+                            <constraint firstItem="A95-VE-06m" firstAttribute="leading" secondItem="UZ6-I9-T92" secondAttribute="leadingMargin" id="BgC-B9-vgN"/>
+                            <constraint firstItem="A95-VE-06m" firstAttribute="centerX" secondItem="ZyK-zU-FPt" secondAttribute="centerX" id="ViB-hs-4cR"/>
+                            <constraint firstItem="gow-GN-A5B" firstAttribute="bottom" secondItem="A95-VE-06m" secondAttribute="bottom" constant="16" id="mss-C4-SPg"/>
                             <constraint firstItem="ZyK-zU-FPt" firstAttribute="leading" secondItem="gow-GN-A5B" secondAttribute="leading" id="np7-qk-agI"/>
-                            <constraint firstItem="A95-VE-06m" firstAttribute="leading" secondItem="UZ6-I9-T92" secondAttribute="leadingMargin" constant="-36" id="oiw-mq-Fgw"/>
-                            <constraint firstItem="gow-GN-A5B" firstAttribute="bottom" secondItem="A95-VE-06m" secondAttribute="bottom" constant="16" id="xze-Gg-weq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gow-GN-A5B"/>
                     </view>
