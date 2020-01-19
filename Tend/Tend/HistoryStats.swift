@@ -7,24 +7,39 @@
 //
 
 import UIKit
+import Charts
 
 class HistoryStats: UIViewController {
 
+    @IBOutlet weak var barView: BarChartView!
+    var data = ["morning", "afternoon", "evening"]
+    var vals = [0.0,2.0,1.0]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setChart(dataPoints: data, values: vals)
 
         // Do any additional setup after loading the view.
     }
     
+    func setChart(dataPoints: [String], values: [Double]) {
 
-    /*
-    // MARK: - Navigation
+        barView.noDataText = "You need to provide data for the chart."
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        var dataEntries: [BarChartDataEntry] = Array()
+        var counter = 0.0
+
+        for i in 0..<dataPoints.count {
+            counter += 1.0
+            let dataEntry = BarChartDataEntry(x: values[i], y: counter)
+            dataEntries.append(dataEntry)
+        }
+
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Time")
+        let chartData = BarChartData()
+        chartData.addDataSet(chartDataSet)
+        barView.data = chartData
+
     }
-    */
 
 }
