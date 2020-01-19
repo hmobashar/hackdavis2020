@@ -29,18 +29,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
         // For testing purposes, move chunk of code when we want to show calendar view
+//        guard let windowScene = (scene as? UIWindowScene) else { return }
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewController(identifier: "Calendar")
+//
+//        if let window = self.window {
+//            window.backgroundColor = UIColor.white
+//            let nav = UINavigationController()
+//            let mainView = vc
+//            nav.viewControllers = [mainView]
+//            window.rootViewController = nav
+//            window.makeKeyAndVisible()
+//        } // https://github.com/Akhilendra/calenderAppiOS
+        
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "Calendar")
-
-        if let window = self.window {
-            window.backgroundColor = UIColor.white
-            let nav = UINavigationController()
-            let mainView = vc
-            nav.viewControllers = [mainView]
-            window.rootViewController = nav
-            window.makeKeyAndVisible()
-        } // https://github.com/Akhilendra/calenderAppiOS
+        let vc = storyboard.instantiateViewController(identifier: "SymptomsView")
+        self.window?.windowScene = windowScene
+        self.window?.rootViewController = vc
         
         guard let _ = (scene as? UIWindowScene) else { return }
     }
