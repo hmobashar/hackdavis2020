@@ -21,8 +21,8 @@ class HistoryStats: UIViewController {
     
     @IBOutlet weak var pieChart: PieChartView!
 
-    var iosDataEntry = PieChartDataEntry(value: 0)
-    var macDataEntry = PieChartDataEntry(value: 0)
+    var iosDataEntry = PieChartDataEntry(value: 0, label: "Hydrocodone")
+    var macDataEntry = PieChartDataEntry(value: 0, label: "Alprazolam")
     
     var numberOfDownloadsDataEntries = [PieChartDataEntry]()
 
@@ -71,12 +71,18 @@ class HistoryStats: UIViewController {
         // Do any additional setup after loading the view.
         
         pieChart.chartDescription?.text = ""
+        pieChart.drawEntryLabelsEnabled = false
+        pieChart.legend.formSize = 15
         
+        let legendp = pieChart.legend
+        legendp.font = UIFont(name: "Verdana", size: 14.0)!
         iosDataEntry.value = iosDataEntry.value + 1
-        iosDataEntry.label = "iOS"
+        //iosDataEntry.label = "H"
         
-        macDataEntry.value = macDataEntry.value + 1
-        macDataEntry.label = "macOS"
+        macDataEntry.value = macDataEntry.value + 2
+        //macDataEntry.label = "A"
+        
+        
         
         numberOfDownloadsDataEntries = [iosDataEntry, macDataEntry]
         
@@ -108,7 +114,8 @@ class HistoryStats: UIViewController {
         let chartDataSet1 = BarChartDataSet(entries: dataEntries1, label: "Symptoms")
         
         let dataSets: [BarChartDataSet] = [chartDataSet, chartDataSet1]
-        chartDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
+        chartDataSet.colors = [UIColor(red: 155/255, green: 102/255, blue: 240/255, alpha: 1)]
+        chartDataSet1.colors = [UIColor(red: 102/255, green: 191/255, blue: 255/255, alpha: 1)]
         
         let chartData = BarChartData(dataSets: dataSets)
         
