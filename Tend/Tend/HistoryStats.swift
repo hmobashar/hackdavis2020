@@ -13,8 +13,8 @@ class HistoryStats: UIViewController {
 
     @IBOutlet weak var barView1: BarChartView!
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-    let medications = [1.0, 2.0]
-    let symptoms = [1.0,2.0,3.0]
+    let medications = [1.0, 2.0, 0.0, 3.0, 3.0, 2.0, 1.0]
+    let symptoms = [1.0,2.0,2.0, 4.0, 4.0, 2.0, 1.0]
     
     weak var axisFormatDelegate: IAxisValueFormatter?
     let formato:BarChartFormatter = BarChartFormatter()
@@ -30,7 +30,6 @@ class HistoryStats: UIViewController {
         */
         //barView1.delegate = self
         barView1.noDataText = "You need to provide data for the chart."
-        barView1.chartDescription?.text = "sales vs bought"
         
         let legend = barView1.legend
         legend.enabled = true
@@ -79,7 +78,7 @@ class HistoryStats: UIViewController {
             let dataEntry = BarChartDataEntry(x: Double(i), y: self.medications[i])
             dataEntries.append(dataEntry)
             
-            let dataEntry1 = BarChartDataEntry(x: Double(i), y: self.self.symptoms[i])
+            let dataEntry1 = BarChartDataEntry(x: Double(i), y: self.symptoms[i])
             dataEntries1.append(dataEntry1)
             
         }

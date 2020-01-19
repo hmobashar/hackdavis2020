@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KGI-QQ-1L1">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -460,20 +460,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4OH-yT-GzD" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YU9-ja-E5z" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="11" y="74" width="353" height="319"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="353" id="2Ad-35-pcs"/>
+                                    <constraint firstAttribute="height" constant="319" id="M6Z-tk-jMu"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="NrT-xZ-7MO" firstAttribute="trailing" secondItem="4OH-yT-GzD" secondAttribute="trailing" id="ExK-FM-RUp"/>
-                            <constraint firstItem="4OH-yT-GzD" firstAttribute="top" secondItem="NrT-xZ-7MO" secondAttribute="top" constant="-44" id="ccQ-vE-Fpp"/>
-                            <constraint firstItem="NrT-xZ-7MO" firstAttribute="bottom" secondItem="4OH-yT-GzD" secondAttribute="bottom" constant="-34" id="hzH-N4-H45"/>
-                            <constraint firstItem="4OH-yT-GzD" firstAttribute="leading" secondItem="NrT-xZ-7MO" secondAttribute="leading" id="vI2-sP-ujF"/>
+                            <constraint firstItem="YU9-ja-E5z" firstAttribute="top" secondItem="NrT-xZ-7MO" secondAttribute="top" constant="30" id="JZM-4T-qhH"/>
+                            <constraint firstItem="NrT-xZ-7MO" firstAttribute="trailing" secondItem="YU9-ja-E5z" secondAttribute="trailing" constant="11" id="dIj-pn-MG9"/>
+                            <constraint firstItem="YU9-ja-E5z" firstAttribute="leading" secondItem="NrT-xZ-7MO" secondAttribute="leading" constant="11" id="u3M-bo-AKA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NrT-xZ-7MO"/>
                     </view>
+                    <connections>
+                        <outlet property="barView1" destination="YU9-ja-E5z" id="iMJ-sr-Zc4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pv-mq-JH2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
