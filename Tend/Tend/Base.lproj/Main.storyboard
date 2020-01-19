@@ -34,7 +34,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ok2-RR-zuG">
-                                <rect key="frame" x="0.0" y="55" width="375" height="38"/>
+                                <rect key="frame" x="0.0" y="45" width="375" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="D0D-vH-mLa"/>
                                 </constraints>
@@ -79,12 +79,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZqW-xb-om1">
-                                        <rect key="frame" x="183" y="66" width="135" height="18"/>
+                                        <rect key="frame" x="160" y="66" width="158" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="dx5-In-ly5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="View Medications">
+                                        <state key="normal" title="Evening Medications">
                                             <color key="titleColor" red="0.40675894610000002" green="0.15326385070000001" blue="0.2355061521" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                     </button>
@@ -159,12 +159,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fd9-m9-QFJ">
-                                        <rect key="frame" x="183" y="66" width="135" height="18"/>
+                                        <rect key="frame" x="157" y="66" width="161" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="5pb-TO-xph"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="View Medications">
+                                        <state key="normal" title="Morning Medications">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
@@ -233,12 +233,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxx-oV-tjN">
-                                        <rect key="frame" x="16" y="66" width="135" height="18"/>
+                                        <rect key="frame" x="16" y="66" width="174" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="XyV-CV-JFI"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="View Medications">
+                                        <state key="normal" title="Afternoon Medications">
                                             <color key="titleColor" red="0.78407786980000005" green="0.43379270850000001" blue="0.46166755240000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                     </button>
@@ -361,6 +361,28 @@
                                     <constraint firstItem="zNF-8O-hUa" firstAttribute="top" secondItem="16Q-eU-4RA" secondAttribute="bottom" constant="6" id="zqe-Yl-hgf"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQt-Hd-TOF">
+                                <rect key="frame" x="21" y="46" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="3oZ-mC-owt"/>
+                                    <constraint firstAttribute="height" constant="35" id="lsz-Hd-lXH"/>
+                                </constraints>
+                                <state key="normal" image="pills"/>
+                                <connections>
+                                    <segue destination="UK1-Vh-isZ" kind="presentation" modalPresentationStyle="fullScreen" id="7ak-Ek-oJU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKA-ly-0uM">
+                                <rect key="frame" x="318" y="44" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="33G-WG-90g"/>
+                                    <constraint firstAttribute="width" constant="40" id="vZl-me-Wil"/>
+                                </constraints>
+                                <state key="normal" image="calendar"/>
+                                <connections>
+                                    <segue destination="Lyg-Gl-rYT" kind="presentation" modalPresentationStyle="fullScreen" id="TjE-dA-a7K"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -379,24 +401,28 @@
                             <constraint firstItem="EfQ-a8-dxe" firstAttribute="top" secondItem="WA9-zJ-5F2" secondAttribute="bottom" constant="8" id="Ic8-0E-iYw"/>
                             <constraint firstItem="fbd-0I-Qct" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="JCx-fc-CRJ"/>
                             <constraint firstItem="ecu-Yx-kIU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="NNk-K9-DLZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DKA-ly-0uM" secondAttribute="trailing" constant="17" id="NdA-q7-Md8"/>
                             <constraint firstItem="J7q-Pf-nJQ" firstAttribute="top" secondItem="Yko-0H-jlk" secondAttribute="bottom" constant="11" id="Orf-NA-Hss"/>
-                            <constraint firstItem="fbd-0I-Qct" firstAttribute="top" secondItem="ok2-RR-zuG" secondAttribute="bottom" constant="14" id="YmE-FA-k79"/>
-                            <constraint firstItem="uIp-wb-d6G" firstAttribute="top" secondItem="ok2-RR-zuG" secondAttribute="bottom" constant="14" id="bB6-C7-fWH"/>
+                            <constraint firstItem="qQt-Hd-TOF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="2" id="Ses-F8-oom"/>
+                            <constraint firstItem="fbd-0I-Qct" firstAttribute="top" secondItem="ok2-RR-zuG" secondAttribute="bottom" constant="24" id="YmE-FA-k79"/>
+                            <constraint firstItem="uIp-wb-d6G" firstAttribute="top" secondItem="ok2-RR-zuG" secondAttribute="bottom" constant="24" id="bB6-C7-fWH"/>
                             <constraint firstItem="WA9-zJ-5F2" firstAttribute="top" secondItem="ecu-Yx-kIU" secondAttribute="bottom" constant="8" id="cC5-5h-p5T"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J7q-Pf-nJQ" secondAttribute="trailing" constant="13" id="d3b-a3-egH"/>
                             <constraint firstItem="gl4-tw-okP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d9s-EL-n7x"/>
-                            <constraint firstItem="ok2-RR-zuG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="dvc-lg-EzM"/>
+                            <constraint firstItem="ok2-RR-zuG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="1" id="dvc-lg-EzM"/>
                             <constraint firstItem="dFF-yb-Jov" firstAttribute="leading" secondItem="fbd-0I-Qct" secondAttribute="trailing" constant="-9" id="e07-zN-sgN"/>
                             <constraint firstItem="gl4-tw-okP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hc4-nq-QbZ"/>
                             <constraint firstItem="WA9-zJ-5F2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="iKp-rg-e6A"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EfQ-a8-dxe" secondAttribute="trailing" constant="21" id="jmA-SP-xKe"/>
-                            <constraint firstItem="Yko-0H-jlk" firstAttribute="top" secondItem="ok2-RR-zuG" secondAttribute="bottom" constant="26" id="mKK-SB-S4y"/>
+                            <constraint firstItem="Yko-0H-jlk" firstAttribute="top" secondItem="ok2-RR-zuG" secondAttribute="bottom" constant="36.000000000000014" id="mKK-SB-S4y"/>
                             <constraint firstItem="WA9-zJ-5F2" firstAttribute="top" secondItem="ecu-Yx-kIU" secondAttribute="bottom" constant="8" id="nhz-iZ-Wdk"/>
                             <constraint firstItem="ecu-Yx-kIU" firstAttribute="top" secondItem="fbd-0I-Qct" secondAttribute="bottom" constant="10" id="p7F-LO-I3X"/>
-                            <constraint firstItem="dFF-yb-Jov" firstAttribute="top" secondItem="ok2-RR-zuG" secondAttribute="bottom" constant="26" id="qIc-xn-FIY"/>
+                            <constraint firstItem="dFF-yb-Jov" firstAttribute="top" secondItem="ok2-RR-zuG" secondAttribute="bottom" constant="36.000000000000014" id="qIc-xn-FIY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WA9-zJ-5F2" secondAttribute="trailing" constant="21" id="r2C-Rj-1rD"/>
+                            <constraint firstItem="DKA-ly-0uM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uv1-I2-0Gj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ecu-Yx-kIU" secondAttribute="trailing" constant="20" id="xyz-PD-E9Q"/>
                             <constraint firstItem="Yko-0H-jlk" firstAttribute="leading" secondItem="fbd-0I-Qct" secondAttribute="trailing" constant="-8" id="ygO-M5-qhe"/>
+                            <constraint firstItem="qQt-Hd-TOF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="zuR-UF-XqX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -435,26 +461,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4OH-yT-GzD" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="147" width="343" height="335"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="NrT-xZ-7MO" firstAttribute="trailing" secondItem="4OH-yT-GzD" secondAttribute="trailing" constant="16" id="ExK-FM-RUp"/>
-                            <constraint firstItem="4OH-yT-GzD" firstAttribute="top" secondItem="NrT-xZ-7MO" secondAttribute="top" constant="103" id="ccQ-vE-Fpp"/>
-                            <constraint firstItem="NrT-xZ-7MO" firstAttribute="bottom" secondItem="4OH-yT-GzD" secondAttribute="bottom" constant="296" id="hzH-N4-H45"/>
-                            <constraint firstItem="4OH-yT-GzD" firstAttribute="leading" secondItem="NrT-xZ-7MO" secondAttribute="leading" constant="16" id="vI2-sP-ujF"/>
+                            <constraint firstItem="NrT-xZ-7MO" firstAttribute="trailing" secondItem="4OH-yT-GzD" secondAttribute="trailing" id="ExK-FM-RUp"/>
+                            <constraint firstItem="4OH-yT-GzD" firstAttribute="top" secondItem="NrT-xZ-7MO" secondAttribute="top" constant="-44" id="ccQ-vE-Fpp"/>
+                            <constraint firstItem="NrT-xZ-7MO" firstAttribute="bottom" secondItem="4OH-yT-GzD" secondAttribute="bottom" constant="-34" id="hzH-N4-H45"/>
+                            <constraint firstItem="4OH-yT-GzD" firstAttribute="leading" secondItem="NrT-xZ-7MO" secondAttribute="leading" id="vI2-sP-ujF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NrT-xZ-7MO"/>
                     </view>
-                    <connections>
-                        <outlet property="barView" destination="4OH-yT-GzD" id="mVS-HM-Jl0"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pv-mq-JH2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562" y="115"/>
+            <point key="canvasLocation" x="1560.8" y="114.53201970443351"/>
         </scene>
         <!--MedicationsVC-->
         <scene sceneID="t7e-6L-j6W">
@@ -469,7 +492,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8NU-ps-zoP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2249" y="116"/>
+            <point key="canvasLocation" x="1561" y="828"/>
         </scene>
         <!--SymptomsVC-->
         <scene sceneID="EEm-7j-tsj">
@@ -611,9 +634,11 @@
     </scenes>
     <resources>
         <image name="breakfast" width="100" height="100"/>
+        <image name="calendar" width="160" height="160"/>
         <image name="dinner" width="100" height="100"/>
         <image name="happy" width="100" height="100"/>
         <image name="lunch" width="100" height="100"/>
+        <image name="pills" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="zUe-P6-1Ei"/>
