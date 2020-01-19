@@ -23,10 +23,16 @@ class Calender: UIViewController {
         self.view.backgroundColor=Style.bgColor
         
         view.addSubview(calenderView)
-        calenderView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive=true
-        calenderView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -12).isActive=true
-        calenderView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12).isActive=true
+        
+        calenderView.translatesAutoresizingMaskIntoConstraints = false
+        calenderView.topAnchor.constraint(equalTo: view.topAnchor, constant: 45).isActive = true
+        calenderView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        calenderView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        calenderView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        calenderView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive=true
+        calenderView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive=true
         calenderView.heightAnchor.constraint(equalToConstant: 365).isActive=true
+        
         
 //        let rightBarBtn = UIBarButtonItem(title: "Light", style: .plain, target: self, action: #selector(rightBarBtnAction))
 //        self.navigationItem.rightBarButtonItem = rightBarBtn

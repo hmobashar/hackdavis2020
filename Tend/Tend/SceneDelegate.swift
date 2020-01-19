@@ -42,13 +42,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            window.makeKeyAndVisible()
 //        } // https://github.com/Akhilendra/calenderAppiOS
         
-        /*
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "SymptomsView")
         self.window?.windowScene = windowScene
         self.window?.rootViewController = vc
-        */
+        
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 

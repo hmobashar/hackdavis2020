@@ -9,22 +9,24 @@
 import Foundation
 import Firebase
 
+struct CellModel {
+    let name: String
+}
+
 class SymptomCell: UICollectionViewCell {
+    
     @IBOutlet weak var image: UIImageView!
     
+
     @IBOutlet weak var name: UILabel!
     
-    func setContact() {
-            // set up image UI
-            self.image.contentMode = .scaleAspectFill
-            self.image.layer.cornerRadius = 40
-            self.image.translatesAutoresizingMaskIntoConstraints = false
-            self.image.clipsToBounds = true
-            self.image.layer.cornerRadius = (self.image.frame.size.width ) / 2
-            self.image.layer.borderWidth = 3.0
-            self.image.layer.borderColor = UIColor.white.cgColor
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        // Initialization code
+//    }
+    
+    public func configure(with model: CellModel) {
+        name.text = model.name
+    }
 
-            // assign data
-            self.name.text = "Happy"
-        }
 }

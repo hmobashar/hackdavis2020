@@ -14,14 +14,19 @@ class SymptomsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     struct Colors {
         static var lightBlue = #colorLiteral(red: 0.6117647059, green: 0.6941176471, blue: 0.7098039216, alpha: 1)
-        static var lightPink = #colorLiteral(red: 0.9568627451, green: 0.7490196078, blue: 0.6666666667, alpha: 1)
+        static var lightPink = #colorLiteral(red: 0.9168766141, green: 0.5313091874, blue: 0.7172885537, alpha: 1)
     }
+    
+    let data: [CellModel] = [CellModel(name: "Forgetfulness"), CellModel(name: "Confusion"), CellModel(name: "Depression"), CellModel(name: "Drowsiness"), CellModel(name: "Constipation"), CellModel(name: "Headache"), CellModel(name: "Bodyaches"), CellModel(name: "Stomach pain"), CellModel(name: "Backpain")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.symptomCollection.dataSource = self
         self.symptomCollection.delegate = self
         self.setupCollectionViewItemSize()
+        
+//        self.symptomCollection.register(UINib.init(nibName: "SymptomCell", bundle: nil), forCellWithReuseIdentifier: "Symptom")
+        self.symptomCollection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
 
         // Do any additional setup after loading the view.
     }
@@ -30,7 +35,7 @@ class SymptomsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         if symptomCollectionViewFlowLayout == nil {
             let numberOfItemsPerRow: CGFloat = 3
             let lineSpacing: CGFloat = 10
-            let interItemSpacing: CGFloat = 0
+            let interItemSpacing: CGFloat = 8
             
             let width = (self.symptomCollection.frame.width - (numberOfItemsPerRow - 1) * interItemSpacing) / numberOfItemsPerRow
             let height = width
@@ -53,7 +58,25 @@ class SymptomsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = symptomCollection.dequeueReusableCell(withReuseIdentifier: "Symptom", for: indexPath as IndexPath) as! SymptomCell
-
+        
+        switch(indexPath.row) {
+        case 0: cell.image.image = UIImage(named: "alzheimer")!
+        cell.name.text! = "forgetfulness"
+        case 1: cell.image.image = UIImage(named: "brain_stroke")!
+        case 2: cell.image.image = UIImage(named: "depression")!
+        case 3: cell.image.image = UIImage(named: "ghost")!
+        case 4: cell.image.image = UIImage(named: "hand")!
+        case 5: cell.image.image = UIImage(named: "headache")!
+        case 6: cell.image.image = UIImage(named: "leg")!
+        case 7: cell.image.image = UIImage(named: "pills")!
+        case 8: cell.image.image = UIImage(named: "pulse")!
+        case 9: cell.image.image = UIImage(named: "stomach")!
+        default: cell.image.image = UIImage(named: "headache")!
+        }
+        
+        cell.configure(with: data[indexPath.row])
+        
+        
         return cell
     }
     
