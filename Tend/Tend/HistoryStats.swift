@@ -14,11 +14,20 @@ class HistoryStats: UIViewController {
     @IBOutlet weak var barView1: BarChartView!
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     let medications = [1.0, 2.0]
-    let symptoms = [1.0,2.0,3.0]
+    let symptoms = [1.0,3.0,2.0,2.0,5.0,2.0,4.0]
     
     weak var axisFormatDelegate: IAxisValueFormatter?
     let formato:BarChartFormatter = BarChartFormatter()
     
+    @ IBOutlet weak var pieChart: PieChartView!
+    @ IBOutlet weak var iosStepper: UIStepper!
+    @ IBOutlet weak var macStepper: UIStepper!
+    
+    var iosDataEntry = PieChartDataEntry(value: 0)
+    var macDataEntry = PieChartDataEntry(value: 0)
+    
+    var numberOfDownloadsDataEntries = [PieChartDataEntry]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         /*
@@ -62,6 +71,19 @@ class HistoryStats: UIViewController {
         
         setChart()
         // Do any additional setup after loading the view.
+        
+        pieChart.chartDescription?.text = ""
+        
+        iosDataEntry.value = iosStepper.value
+        iosDataEntry.label = "iOS"
+        
+        macDataEntry.value = macStepper.value
+        macDataEntry.label = "macOS"
+        
+        numberOfDownloadsDataEntries = [iosDataEntry, macDataEntry]
+        
+        updateChartData()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -113,4 +135,14 @@ class HistoryStats: UIViewController {
         barView1.animate(xAxisDuration: 1.5, yAxisDuration: 1.5, easingOption: .linear)
     }
 
+    func updateChartData() {
+        let chartDataSet = PieChartDataSet(entries: numberOfDownloadsDataEntries, label: nil)
+        let chartData = PieChartData(dataSet: chartDataSet)
+        
+        let colors = [UIColor(named:"iosColor"), UIColor(named:"macColor")]
+        chartDataSet.colors = colors as! [NSUIColor]
+        
+        pieChart.data = chartData
+    }
+    
 }
