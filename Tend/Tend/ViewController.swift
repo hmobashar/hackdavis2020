@@ -18,13 +18,13 @@ class ViewController: UIViewController {
         loadingImage.isHidden = false
         loadingImage.loadGif(name: "happyGif")
         // Do any additional setup after loading the view.
-        
     }
     
     
     @IBAction func behaviorLogButton(_ sender: Any) {
         loadingImage.loadGif(name: "sadGif")
     }
+
 
 }
 
