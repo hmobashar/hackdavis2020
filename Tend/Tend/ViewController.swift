@@ -15,10 +15,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var loadingImage: UIImageView!
     @IBOutlet weak var dailyLog: UIView!
     @IBOutlet weak var logView: UIView!
+    @IBOutlet weak var breakfastName: UILabel!
+    @IBOutlet weak var lunchName: UILabel!
+    @IBOutlet weak var dinnerName: UILabel!
+    
     
     let formato:BarChartFormatter = BarChartFormatter()
     var data = ["Morning", "Afternoon", "Evening"]
+    var someOtherDay = false
        var vals = [0.5,2.0,1.0]
+    var vals2 = [1.0,1.0,0.0]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +36,13 @@ class ViewController: UIViewController {
         barView.legend.enabled = false
         setChart(dataPoints: data, values: vals)
         logView.isHidden = true
+        
+        if(someOtherDay){
+            let meal = getMeal(date: "2020-01-22")
+            breakfastName.text = "You had " + meal[0].meal_name
+            lunchName.text = "You had " + meal[1].meal_name
+            dinnerName.text = "You had " + meal[2].meal_name
+        }
     }
     
     
