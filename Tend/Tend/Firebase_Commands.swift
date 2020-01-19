@@ -32,6 +32,7 @@ func serializeSymptom(symptom: Symptom) -> [String : Any] {
         "name": symptom.name,
         "occurred": symptom.occurred
     ]
+
     return symptom_info
 } // serializeSymptom(): format data for database
 
@@ -193,6 +194,7 @@ func getSymptom(date: String) -> [Symptom] {
             sym_list.append(symptom)
         } // iterates through all items in symptoms field
     })
+
     return sym_list
 } // getSymptom() : Read symptom entry from Firebase into Symptom object
 
