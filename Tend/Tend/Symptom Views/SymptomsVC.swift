@@ -28,9 +28,9 @@ class SymptomsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     private func setupCollectionViewItemSize() {
         if symptomCollectionViewFlowLayout == nil {
-            let numberOfItemsPerRow: CGFloat = 2
-            let lineSpacing: CGFloat = 2
-            let interItemSpacing: CGFloat = 1
+            let numberOfItemsPerRow: CGFloat = 3
+            let lineSpacing: CGFloat = 10
+            let interItemSpacing: CGFloat = 0
             
             let width = (self.symptomCollection.frame.width - (numberOfItemsPerRow - 1) * interItemSpacing) / numberOfItemsPerRow
             let height = width
@@ -48,13 +48,22 @@ class SymptomsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 9
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = symptomCollection.dequeueReusableCell(withReuseIdentifier: "Symptom", for: indexPath as IndexPath) as! SymptomCell
 
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if self.symptomCollection.cellForItem(at: indexPath)?.contentView.backgroundColor == Colors.lightPink {
+            self.symptomCollection.cellForItem(at: indexPath)?.contentView.backgroundColor = UIColor.white
+        } else {
+            self.symptomCollection.cellForItem(at: indexPath)?.contentView.backgroundColor = Colors.lightPink
+        }
+
     }
 
 }

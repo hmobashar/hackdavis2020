@@ -15,7 +15,7 @@
 to make it easier for a caregiver and user to keep track of health information.
 
 <p align="center">
-	<img src="github_asset/tend.png">
+	<img src="github_asset/tend.png" height="500" width="260">
 </p>
 
 **Tend** uses the following APIs:
