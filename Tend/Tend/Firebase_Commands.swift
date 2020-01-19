@@ -27,6 +27,16 @@ func serializeMedication(medication: Medication) -> [String: Any] {
 
 
 
+func serializeSymptom(symptom: Symptom) -> [String : Any] {
+    let symptom_info : [String : Any] = [
+        "name": symptom.name,
+        "occurred": symptom.occurred
+    ]
+    return symptom_info
+} // serializeSymptom(): format data for database
+
+
+
 // --------------- POST METHODS ---------------
 
 func uploadMedication(medication: Medication) {
@@ -37,8 +47,8 @@ func uploadMedication(medication: Medication) {
 
 
 func uploadSymptom(symptom: Symptom) {
-
-    
+    let symptom_key = rootRef.child("user").child("symptoms")
+    symptom_key.child(symptom.name).setValue(symptom.occurred)
 } // uploadSymptom(): Add to list/summary of symptoms in Firebase
 
 
@@ -50,11 +60,10 @@ func logMedication(med: Medication, date: String) {
 
 
 
-func logSymptom(symptom: Symptom) {
-    
+func logSymptom(sym: Symptom, date: String) {
+    let date_key = rootRef.child("user").child("history").child(date)
+    date_key.child("symptoms").child(sym.name).setValue(serializeSymptom(symptom: sym))
 } // logSymptom(): Add symptom & T/F under a date entry in Firebase
-
-
 
 
 
@@ -95,10 +104,25 @@ func getMedication(date: String) -> [Medication] {
 
 
 
-func getSymptom() -> Symptom? {
-    return nil // FIXME: remove (added to silence missing return error)
+func getSymptom(date: String) -> [Symptom] {
+    var sym_list = [Symptom]()
+
+    let sym_key = rootRef.child("user").child("history").child(date).child("symptoms")
+
+    sym_key.observe(.value, with: { snapshot in 
+        guard let symptoms = snapshot.children.allObjects as? [DataSnapshot] else { return }
+        for sym in symptoms {
+            // extract values
+            let wrapped_name = sym.childSnapshot(forPath: "name").value as? String
+            let wrapped_occurred = sym.childSnapshot(forPath: "occurred").value as? Bool
+
+            // unwrap values(optionals)
+            let name = wrapped_name ?? ""
+            let occurred = wrapped_occurred ?? false
+
+            var symptom = Symptom(name: name, occur: occurred)
+            sym_list.append(symptom)
+        } // iterates through all items in symptoms field
+    })
+    return sym_list
 } // getSymptom() : Read symptom entry from Firebase into Symptom object
-
-
-
-

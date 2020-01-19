@@ -5,9 +5,9 @@ class Symptom {
     var name: String
     var occurred: Bool
 
-    init(name: String) {
+    init(name: String, occur: Bool) {
         self.name = name
-        self.occurred = false
+        self.occurred = occur
     }
     
 } // Symptoms: Defines a user's symptom
