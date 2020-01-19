@@ -17,7 +17,7 @@ class Medication {
     
     init(name: String, dosage: Double) {
         self.name = name
-        self.dosage = 0.0
+        self.dosage = dosage
         self.num_taken = 0
     }
 

@@ -146,6 +146,7 @@ func getMedication(date: String) -> [Medication] {
     
     med_key.observe(.value, with: { snapshot in
         guard let medications = snapshot.children.allObjects as? [DataSnapshot] else { return }
+        print(String(describing: snapshot))
     
         for med in medications {
             // extract values
