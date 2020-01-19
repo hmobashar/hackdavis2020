@@ -37,6 +37,68 @@ func serializeSymptom(symptom: Symptom) -> [String : Any] {
 
 
 
+func serializeMeal(meal: Meal) -> [String : Any] {
+    // First format lists of medication & symptom objects
+    var serialized_meds = [[String: Any]]()
+    var serialized_symptoms = [[String: Any]]()
+    
+    for med in meal.medication {
+        serialized_meds.append(serializeMedication(medication: med))
+    }
+    
+    for sym in meal.symptom {
+        serialized_symptoms.append(serializeSymptom(symptom: sym))
+    }
+    
+    // serialize meal
+    let meal_info : [String : Any] = [
+        "meal_name": meal.meal_name,
+        "medication": serialized_meds,
+        "symptom": serialized_symptoms,
+        "food": meal.food
+    ]
+    
+    return meal_info
+} // serializeMeal(): Convert Meal object to dictionary
+
+
+
+func deserializeMed(meds: [[String : Any]]) -> [Medication] {
+    var medications = [Medication]()
+    
+    for dict in meds {
+        let name = dict["name"] as? String ?? ""
+        let dosage = dict["dosage"] as? Double ?? 0.0
+        let num_taken = dict["num_taken"] as? Int ?? 0
+        let timestamps = dict["timestamps"] as? [Int: String] ?? [Int: String]()
+        
+        let temp_med = Medication(name: name, dosage: dosage)
+        temp_med.num_taken = num_taken
+        temp_med.timestamps = timestamps
+        
+        medications.append(temp_med)
+    }
+    
+    return medications
+} // deserializeMed(): convert list of dicts back into Medication objs
+
+
+
+func deserializeSym(syms: [[String : Any]]) -> [Symptom] {
+    var symptoms = [Symptom]()
+    
+    for dict in syms {
+        let name = dict["name"] as? String ?? ""
+        let occurred = dict["occurred"] as? Bool ?? false
+        
+        symptoms.append(Symptom(name: name, occur: occurred))
+    }
+    
+    return symptoms
+} // deserializeMed(): convert list of dicts back into Medication objs
+
+
+
 // --------------- POST METHODS ---------------
 
 func uploadMedication(medication: Medication) {
@@ -64,6 +126,13 @@ func logSymptom(sym: Symptom, date: String) {
     let date_key = rootRef.child("user").child("history").child(date)
     date_key.child("symptoms").child(sym.name).setValue(serializeSymptom(symptom: sym))
 } // logSymptom(): Add symptom & T/F under a date entry in Firebase
+
+
+
+func logMeal(meal: Meal, date: String) {
+    let meal_key = rootRef.child("user").child("history").child(date)
+    meal_key.child("meals").child(meal.meal_name).setValue(serializeMeal(meal: meal))
+} // logMeal(): Add meal entry under specific date in Firebase
 
 
 
@@ -120,9 +189,43 @@ func getSymptom(date: String) -> [Symptom] {
             let name = wrapped_name ?? ""
             let occurred = wrapped_occurred ?? false
 
-            var symptom = Symptom(name: name, occur: occurred)
+            let symptom = Symptom(name: name, occur: occurred)
             sym_list.append(symptom)
         } // iterates through all items in symptoms field
     })
     return sym_list
 } // getSymptom() : Read symptom entry from Firebase into Symptom object
+
+
+
+func getMeal(date: String) -> [Meal] {
+    var meal_list = [Meal]()
+    
+    let meal_key = rootRef.child("user").child("history").child(date).child("meals")
+    
+    meal_key.observe(.value, with: { snapshot in
+        guard let meals = snapshot.children.allObjects as? [DataSnapshot] else { return }
+        
+        for meal in meals {
+            // extract values
+            let wrapped_name = meal.childSnapshot(forPath: "meal_name").value as? String
+            let wrapped_med = meal.childSnapshot(forPath: "medication").value as? [[String: Any]]
+            let wrapped_sym = meal.childSnapshot(forPath: "symptom").value as? [[String: Any]]
+            let wrapped_food = meal.childSnapshot(forPath: "food").value as? String
+            
+            // unwrap optionals
+            let name = wrapped_name ?? ""
+            let serialized_meds = wrapped_med ?? [[String: Any]]()
+            let serialized_syms = wrapped_sym ?? [[String: Any]]()
+            let food = wrapped_food ?? ""
+            
+            // convert serialized med/sym dictionaries back to respective objs
+            let medications = deserializeMed(meds: serialized_meds)
+            let symptoms = deserializeSym(syms: serialized_syms)
+            
+            meal_list.append(Meal(name: name, med: medications, sym: symptoms, description: food))
+        }
+    }) // extract all meals for certain day
+    
+    return meal_list
+} // getMeal(): Form array of meals from specific day, from Firebase

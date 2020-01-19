@@ -11,6 +11,7 @@
 		02F5307523D3CDB6009D05D5 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5307323D3CDB6009D05D5 /* Medication.swift */; };
 		02F5307623D3CDB6009D05D5 /* Symptoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5307423D3CDB6009D05D5 /* Symptoms.swift */; };
 		02F5307823D3D303009D05D5 /* Firebase_Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5307723D3D303009D05D5 /* Firebase_Commands.swift */; };
+		02F5307A23D404BB009D05D5 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5307923D404BB009D05D5 /* Meal.swift */; };
 		77C7D5C423D393500075CAD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7D5C323D393500075CAD7 /* AppDelegate.swift */; };
 		77C7D5C623D393500075CAD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7D5C523D393500075CAD7 /* SceneDelegate.swift */; };
 		77C7D5C823D393500075CAD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7D5C723D393500075CAD7 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 		02F5307323D3CDB6009D05D5 /* Medication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
 		02F5307423D3CDB6009D05D5 /* Symptoms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symptoms.swift; sourceTree = "<group>"; };
 		02F5307723D3D303009D05D5 /* Firebase_Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase_Commands.swift; sourceTree = "<group>"; };
+		02F5307923D404BB009D05D5 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		56A38FB4A71037C36EDA58A0 /* Pods-Tend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tend.release.xcconfig"; path = "Target Support Files/Pods-Tend/Pods-Tend.release.xcconfig"; sourceTree = "<group>"; };
 		77C7D5C023D393500075CAD7 /* Tend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77C7D5C323D393500075CAD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			children = (
 				02F5307323D3CDB6009D05D5 /* Medication.swift */,
 				02F5307423D3CDB6009D05D5 /* Symptoms.swift */,
+				02F5307923D404BB009D05D5 /* Meal.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			files = (
 				02F5307823D3D303009D05D5 /* Firebase_Commands.swift in Sources */,
 				02F5307623D3CDB6009D05D5 /* Symptoms.swift in Sources */,
+				02F5307A23D404BB009D05D5 /* Meal.swift in Sources */,
 				02F5307523D3CDB6009D05D5 /* Medication.swift in Sources */,
 				77C7D5C823D393500075CAD7 /* ViewController.swift in Sources */,
 				77C7D5C423D393500075CAD7 /* AppDelegate.swift in Sources */,

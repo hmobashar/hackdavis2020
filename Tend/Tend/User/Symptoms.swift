@@ -9,5 +9,4 @@ class Symptom {
         self.name = name
         self.occurred = occur
     }
-    
 } // Symptoms: Defines a user's symptom
