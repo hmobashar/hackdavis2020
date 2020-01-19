@@ -20,9 +20,11 @@ class ViewController: UIViewController {
     // var macDataEntry = PieChartDataEntry(value: 0)
     
     // var numberOfDownloadsDataEntries = [PieChartDataEntry]()
-    
+    @IBOutlet weak var loadingImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadingImage.isHidden = false
+        loadingImage.loadGif(name: "happyGif")
         // Do any additional setup after loading the view.
         
         // pieChart.chartDescription?.text = ""
