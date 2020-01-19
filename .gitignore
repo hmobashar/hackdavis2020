@@ -1,4 +1,6 @@
+# Remove Settings
 Tend/.DS_Store
 Tend/Tend/.DS_Store
 *.DS_Store
+
 *.xcuserstate

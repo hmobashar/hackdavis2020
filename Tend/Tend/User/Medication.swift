@@ -13,7 +13,7 @@ class Medication {
     var name: String
     var dosage: Double
     var num_taken: Int
-    var timestamps = [Int: String]()
+    var timestamps = [Int: String]() // log time everytime medication is taken
     
     init(name: String, dosage: Double) {
         self.name = name
