@@ -12,7 +12,10 @@
 		02F5307623D3CDB6009D05D5 /* Symptoms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5307423D3CDB6009D05D5 /* Symptoms.swift */; };
 		02F5307823D3D303009D05D5 /* Firebase_Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5307723D3D303009D05D5 /* Firebase_Commands.swift */; };
 		02F5307A23D404BB009D05D5 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5307923D404BB009D05D5 /* Meal.swift */; };
-		770EB7A123D3E338000A082F /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EB7A023D3E338000A082F /* Calendar.swift */; };
+		02F5307D23D43A02009D05D5 /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5307C23D43A02009D05D5 /* MonthView.swift */; };
+		02F5307F23D43C4F009D05D5 /* WeekdaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5307E23D43C4F009D05D5 /* WeekdaysView.swift */; };
+		02F5308123D43E2C009D05D5 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F5308023D43E2C009D05D5 /* CalenderView.swift */; };
+		770EB7A123D3E338000A082F /* Calender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EB7A023D3E338000A082F /* Calender.swift */; };
 		770EB7A323D3E365000A082F /* HistoryStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EB7A223D3E365000A082F /* HistoryStats.swift */; };
 		770EB7A523D3E393000A082F /* MedicationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EB7A423D3E393000A082F /* MedicationsVC.swift */; };
 		770EB7A723D3E3A1000A082F /* SymptomsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770EB7A623D3E3A1000A082F /* SymptomsVC.swift */; };
@@ -35,8 +38,11 @@
 		02F5307423D3CDB6009D05D5 /* Symptoms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symptoms.swift; sourceTree = "<group>"; };
 		02F5307723D3D303009D05D5 /* Firebase_Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase_Commands.swift; sourceTree = "<group>"; };
 		02F5307923D404BB009D05D5 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		02F5307C23D43A02009D05D5 /* MonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
+		02F5307E23D43C4F009D05D5 /* WeekdaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdaysView.swift; sourceTree = "<group>"; };
+		02F5308023D43E2C009D05D5 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
 		56A38FB4A71037C36EDA58A0 /* Pods-Tend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tend.release.xcconfig"; path = "Target Support Files/Pods-Tend/Pods-Tend.release.xcconfig"; sourceTree = "<group>"; };
-		770EB7A023D3E338000A082F /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		770EB7A023D3E338000A082F /* Calender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calender.swift; sourceTree = "<group>"; };
 		770EB7A223D3E365000A082F /* HistoryStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStats.swift; sourceTree = "<group>"; };
 		770EB7A423D3E393000A082F /* MedicationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationsVC.swift; sourceTree = "<group>"; };
 		770EB7A623D3E3A1000A082F /* SymptomsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsVC.swift; sourceTree = "<group>"; };
@@ -78,6 +84,17 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		02F5307B23D439DB009D05D5 /* Calendar Views */ = {
+			isa = PBXGroup;
+			children = (
+				770EB7A023D3E338000A082F /* Calender.swift */,
+				02F5307C23D43A02009D05D5 /* MonthView.swift */,
+				02F5307E23D43C4F009D05D5 /* WeekdaysView.swift */,
+				02F5308023D43E2C009D05D5 /* CalenderView.swift */,
+			);
+			path = "Calendar Views";
+			sourceTree = "<group>";
+		};
 		069B3E8001537140F897BA0C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +125,7 @@
 		77C7D5C223D393500075CAD7 /* Tend */ = {
 			isa = PBXGroup;
 			children = (
+				02F5307B23D439DB009D05D5 /* Calendar Views */,
 				02F5307223D3CDB6009D05D5 /* User */,
 				02F5306B23D3B9B5009D05D5 /* GoogleService-Info.plist */,
 				77C7D5C323D393500075CAD7 /* AppDelegate.swift */,
@@ -274,9 +292,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02F5307D23D43A02009D05D5 /* MonthView.swift in Sources */,
+				02F5307F23D43C4F009D05D5 /* WeekdaysView.swift in Sources */,
 				02F5307823D3D303009D05D5 /* Firebase_Commands.swift in Sources */,
 				02F5307623D3CDB6009D05D5 /* Symptoms.swift in Sources */,
-				770EB7A123D3E338000A082F /* Calendar.swift in Sources */,
+				770EB7A123D3E338000A082F /* Calender.swift in Sources */,
+				02F5308123D43E2C009D05D5 /* CalenderView.swift in Sources */,
 				02F5307A23D404BB009D05D5 /* Meal.swift in Sources */,
 				77BF139723D460290076C9FC /* BarChartFormatter.swift in Sources */,
 				02F5307523D3CDB6009D05D5 /* Medication.swift in Sources */,

@@ -4,6 +4,7 @@
 //
 //  Created by Hajra Mobashar on 1/18/20.
 //  Copyright © 2020 hackdavis2020. All rights reserved.
+//  Used https://github.com/Akhilendra/calenderAppiOS for calendar view
 //
 
 import UIKit
@@ -12,11 +13,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    /*
+     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+
+         // set or create your viewController here
+         let yourViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "yourViewController") as! YourViewController
+         // set the rootViewController here using window instance
+         self.window?.rootViewController = yourViewController
+     }
+     */
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        // For testing purposes, move chunk of code when we want to show calendar view
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "Calendar")
+
+        if let window = self.window {
+            window.backgroundColor = UIColor.white
+            let nav = UINavigationController()
+            let mainView = vc
+            nav.viewControllers = [mainView]
+            window.rootViewController = nav
+            window.makeKeyAndVisible()
+        } // https://github.com/Akhilendra/calenderAppiOS
+        
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
